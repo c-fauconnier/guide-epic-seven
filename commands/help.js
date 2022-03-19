@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'embed',
+    name: 'help',
     description: 'embed for the help command',
     execute(message, args){
         const Discord = require('discord.js');

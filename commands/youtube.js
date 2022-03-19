@@ -10,6 +10,7 @@ module.exports = {
         .addFields(
           {name: 'Watchoum', value: 'https://www.youtube.com/c/Watchoum'},
           {name: 'Samool (anglophone)', value: 'https://www.youtube.com/c/Samool'},
+          {name: 'Epic Seven official channel', value: 'https://www.youtube.com/c/EpicSeven/videos'},
         )
         message.channel.send({embeds: [embed]});
     }
