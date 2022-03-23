@@ -2,7 +2,6 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const search = require('youtube-search');
 const list = require('./youtube.json')
-const { google } = require('googleapis');
 const client = new Discord.Client({ intents: [
   Discord.Intents.FLAGS.GUILDS,
   Discord.Intents.FLAGS.GUILD_MESSAGES
@@ -24,31 +23,31 @@ client.on('ready', () => {
   client.user.setActivity("-aide");
 
 
-  const opts = {
-    maxResults: 1000,
-    key: process.env.YOUTUBE_KEY,
-    type: 'video',
-    channelId: 'UCZStuoLKslHsEzGgWL4rxKg',
-    order: 'date'
-  };
+  // const opts = {
+  //   maxResults: 1000,
+  //   key: process.env.YOUTUBE_KEY,
+  //   type: 'video',
+  //   channelId: 'UCZStuoLKslHsEzGgWL4rxKg',
+  //   order: 'date'
+  // };
 
-  let channel_new_vid = client.channels.cache.get("911686200375525399");
-  let channel_bot = client.channels.cache.get("953289783977869395");
-  setInterval(function (){
-      let result = search('', opts).catch(err => console.log(err));
-      result.then(function (r) {
-          r.results.forEach(element => {
-              if (list['watchoum'].indexOf(element.id) == -1) {
-                  console.log(element.id);
-                  channel_new_vid.send("https://www.youtube.com/watch?v=" + element.id)
-                  list['watchoum'].push(element.id);
-                  fs.writeFile("./youtube.json", JSON.stringify(list, null, 4), (err) => {
-                      if (err) channel_bot.send("Trop de requêtes.");
-                  });
-              }
-          });
-      })
-  },900000)
+  // let channel_new_vid = client.channels.cache.get("911686200375525399");
+  // let channel_bot = client.channels.cache.get("953289783977869395");
+  // setInterval(function (){
+  //     let result = search('', opts).catch(err => console.log(err));
+  //     result.then(function (r) {
+  //         r.results.forEach(element => {
+  //             if (list['watchoum'].indexOf(element.id) == -1) {
+  //                 console.log(element.id);
+  //                 channel_new_vid.send("https://www.youtube.com/watch?v=" + element.id)
+  //                 list['watchoum'].push(element.id);
+  //                 fs.writeFile("./youtube.json", JSON.stringify(list, null, 4), (err) => {
+  //                   if (err) channel_bot.send("Trop de requêtes.");
+  //                 });
+  //             }
+  //         });
+  //     })
+  // },900000)
 })
 
 client.on("reconnecting", function(){
