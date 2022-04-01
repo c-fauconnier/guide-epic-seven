@@ -14,7 +14,8 @@ module.exports = {
           {name: 'aide', value: '_Affiche la liste des commandes_'},
           {name: 'wyvern', value: '_Affiche une page pour mieux comprendre la chasse wyvern_'},
           {name: 'youtube', value: '_Affiche la liste des youtubeurs E7_'},
-          {name: 'leaks', value: '_Lien vers le site epic seven leaks_'}
+          {name: 'leaks', value: '_Lien vers le site epic seven leaks_'},
+          {name: 'procs', value: '_Tableau des valeurs min/max par substat et main stat_'}
         )
         message.channel.send({embeds: [embed]});
     }

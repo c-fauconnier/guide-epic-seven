@@ -96,6 +96,9 @@ client.on("messageCreate", message => {
     case 'leaks':
       message.channel.send('https://www.e7leaks.com/');
       break;
+    case 'procs':
+      message.channel.send('https://external-preview.redd.it/rm-_Nr5piiRSpa0U0FG9MIC18LW36Q6O1Ok983Db4XM.jpg?auto=webp&s=a3a381e716f3c32bc4657edbcad946b14eed057d');
+      break;
   }
 })
 
